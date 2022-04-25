@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Departamento } from 'src/app/models/departamento.model';
+import { DepartamentoService } from 'src/app/services/departamento.service';
 
 @Component({
   selector: 'app-add-departamento',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-departamento.component.css']
 })
 export class AddDepartamentoComponent implements OnInit {
+departamento: Departamento={};
 
-  constructor() { }
 
+  constructor(private departamentoService:DepartamentoService) { }
+  insertado(){
+    this.departamentoService.instertarDepartamento(this.departamento).subscribe(
+      (x) => alert(x.mensaje)
+    );
+  }
   ngOnInit(): void {
   }
+
+  
 
 }
