@@ -6,7 +6,7 @@ import { AddDepartamentoComponent } from './components/add-departamento/add-depa
 
 
 const routes: Routes = [
-  {path:"addModalidad", component: AddDepartamentoComponent}
+  {path:"addDepartamento", component: AddDepartamentoComponent}
 
 ];
 
