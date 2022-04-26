@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Departamento } from 'src/app/models/departamento.model';
+import { Habitante } from 'src/app/models/habitante.model';
+import { DepartamentoService } from 'src/app/services/departamento.service';
+import { HabitanteService } from 'src/app/services/habitante.service';
 
 @Component({
   selector: 'app-add-habitante',
@@ -7,9 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddHabitanteComponent implements OnInit {
 
-  constructor() { }
+  departamento: Departamento[]=[];
+  habitante: Habitante = {
+    departamento:{
+      codDepartamento:-1
+    }
+  };
 
-  ngOnInit(): void {
-  }
+  constructor(private departamentoService:DepartamentoService, private habitanteService:HabitanteService) {
 
+    this.departamentoService.listaDepartamento().subscribe(
+      (x) => this.departamento = x
+  );
+ }
+
+ insertado(){
+   this.habitanteService.instertarHabitante(this.habitante).subscribe(
+     (x) => alert(x.mensaje)
+   );
+ }
+ ngOnInit(): void {
+   
+ }
 }
+
+
+
