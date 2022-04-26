@@ -1,1 +1,64 @@
-<p>add-habitante works!</p>
+<div>
+
+    <form class="content" (ngSubmit)="insertado()" >
+    <div class="submit-form" >
+  
+         <div class="row">
+            <div class="col-lg-12">
+                <h6>Registro de Habitante </h6>
+            </div>
+        </div>
+  
+        <div class="row" style="margin-top: 3%">
+                <div class="col-lg-6">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="habitante.nombre"  />
+                </div>
+            
+                <div class="col-lg-3">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" class="form-control" name="apellido" id="apellido"  [(ngModel)]="habitante.apellido" />
+                </div>
+
+                <div class="col-lg-3">
+                        <label for="dni">DNI</label>
+                        <input type="text" class="form-control" name="dni" id="dni" maxlength="8"  [(ngModel)]="habitante.dni"  />
+                </div>
+         </div>
+  
+        <div class="row" style="margin-top: 3%">
+        <div class="col-lg-3">
+            <label for="correo">Correo</label>
+            <input type="text"  class="form-control" id="correo"  name="correo"  [(ngModel)]="habitante.correo" />
+        </div>
+    
+        <div class="col-lg-3">
+                <label for="telefono">Telefono</label>
+                <input type="text"  class="form-control" id="telefono"  name="telefono"  [(ngModel)]="habitante.telefono" />
+            </div>
+
+
+            <div class="col-lg-3">
+                <label for="departamento">Departamento</label>
+                <select  id="departamento" name="departamento" class="form-control" [(ngModel)]="habitante.departamento!.codDepartamento">
+                    <option value="-1"> [Seleccione] </option>   
+                    <option *ngFor="let aux of departamento" value="{{aux.codDepartamento}}">
+                        {{aux.descripcion}}
+                    </option>
+                </select>
+            </div>
+        </div>
+  
+        <div class="row" style="margin-top: 3%"> 
+                <div class="col-lg-12">
+                    <button class="btn btn-success"  >Enviar</button>
+                </div>
+        </div>
+  
+    
+      </div>
+  
+     </form>
+  
+  
+    </div>

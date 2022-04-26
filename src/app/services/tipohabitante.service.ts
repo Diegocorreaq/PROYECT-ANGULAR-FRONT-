@@ -1,9 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Tipohabitante } from '../models/tipohabitante.model';
+const baseURL = "http://localhost:8090/rest/util/tipohabitante";
 
 @Injectable({
   providedIn: 'root'
 })
-export class TipohabitanteService {
+export class TipoHabitanteService {
 
-  constructor() { }
+  constructor(private htpp:HttpClient) { }
+
+  listaTipohabitante():Observable<Tipohabitante[]>{
+    return this.htpp.get<Tipohabitante[]>(baseURL);
+  }
 }
