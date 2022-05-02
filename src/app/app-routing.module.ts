@@ -14,6 +14,7 @@ const routes: Routes = [
   {path:"addMascota", component: AddMascotaComponent},  
   {path:"addVisitante", component: AddVisitanteComponent}
 
+
 ];
 
 

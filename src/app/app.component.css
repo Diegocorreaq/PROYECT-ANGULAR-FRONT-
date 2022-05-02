@@ -1,0 +1,25 @@
+
+
+.navbar-brand{
+    margin-left: 50px;
+    color: black;
+    font-weight: bold ;
+    font-size: 25px;
+     
+}
+.navbar-nav{
+    align-content: left;
+}
+.nav-bar{
+    background: transparent;
+    
+
+}
+
+.nav-item {
+    margin-left: 50px;
+   
+}
+.nav-link{
+    color: black;
+}
