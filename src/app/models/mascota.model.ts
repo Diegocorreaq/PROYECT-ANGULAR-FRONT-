@@ -1,5 +1,6 @@
+import { LoginUsuario } from "../security/login-usuario";
 import { Departamento } from "./departamento.model";
-import { Usuario } from "./usuario.model";
+
 
 export class Mascota {
     codMascota?:number;
@@ -9,6 +10,6 @@ export class Mascota {
     raza?:string;
     sexo?:string;
     fechaNacimiento?:Date;
-    usuario?:Usuario;
+    usuario?:LoginUsuario;
     fechaRegistro?:Date;
 }
