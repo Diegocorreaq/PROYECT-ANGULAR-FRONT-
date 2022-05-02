@@ -1,5 +1,5 @@
 import { Departamento } from "./departamento.model";
-import { Usuario } from "./usuario.model";
+import { LoginUsuario } from "../security/login-usuario";
 
 export class Visitante {
 
@@ -10,7 +10,7 @@ export class Visitante {
     telefono?:string;
     parentesco?:string;
     fechaNacimiento?:Date;
-    usuario?:Usuario;
+    usuario?:LoginUsuario;
     fechaRegistro?:Date;
 
 

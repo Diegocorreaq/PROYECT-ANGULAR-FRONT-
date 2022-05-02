@@ -1,6 +1,6 @@
 import { Departamento } from "./departamento.model";
 import { Tipohabitante } from "./tipohabitante.model";
-import { Usuario } from "./usuario.model";
+import { LoginUsuario } from "../security/login-usuario";
 
 export class Habitante {
     idHabitante?:number;
@@ -12,6 +12,6 @@ export class Habitante {
     telefono?:string;
     fechaNacimiento?:Date;
     habitante?:Tipohabitante;
-    usuario?:Usuario;
+    usuario?:LoginUsuario;
     fechaRegistro?:Date;
 }

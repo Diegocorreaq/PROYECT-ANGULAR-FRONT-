@@ -6,13 +6,19 @@ import { AddDepartamentoComponent } from './components/add-departamento/add-depa
 import { AddHabitanteComponent } from './components/add-habitante/add-habitante.component';
 import { AddMascotaComponent } from './components/add-mascota/add-mascota.component';
 import { AddVisitanteComponent } from './components/add-visitante/add-visitante.component';
+import { IndexComponent } from './index/index.component';
+import { LoginComponent } from './auth/login.component';
 
 
 const routes: Routes = [
   {path:"addDepartamento", component: AddDepartamentoComponent},  
   {path:"addHabitante", component: AddHabitanteComponent},
   {path:"addMascota", component: AddMascotaComponent},  
-  {path:"addVisitante", component: AddVisitanteComponent}
+  {path:"addVisitante", component: AddVisitanteComponent},
+
+  { path: '', component: IndexComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 
 
 ];

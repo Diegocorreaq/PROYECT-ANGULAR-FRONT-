@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="#">Cibertec</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav">
+        
+
+        <li class="nav-item " *ngIf="!isLogged">
+            <a class="nav-link"  routerLink="/login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+        </li>
+        <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()">
+            <a class="nav-link" style="cursor: pointer;"><i class="fas fa-door-open" ></i> Cerrar Sesión</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a routerLink="addDepartamento" class="nav-link">DEPARTAMENTOS</a>
+        </li>
+        <li class="nav-item">
+
+          <a routerLink="addHabitante" class="nav-link">Habitante</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="addMascota" class="nav-link">Mascota</a>
+        </li>
+        
+        <li class="nav-item">
+          <a routerLink="addVisitante" class="nav-link">Visitante</a>
+
+        </li>
+
+<!--
+        <li class="nav-item dropdown" *ngIf="isLogged">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+            Departamento
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a routerLink="addDepartamento" class="dropdown-item">Crear Departamento</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown" *ngIf="isLogged">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            Habitante
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a routerLink="addHabitante" class="dropdown-item">Crear Habitante</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown" *ngIf="isLogged">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            Mascota
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a routerLink="addMascota" class="dropdown-item">Crear Mascota</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown" *ngIf="isLogged">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            Visitante
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a routerLink="addVisitante" class="dropdown-item">Crear Visitante</a>
+            </div>
+        </li>
+-->
+       
+
+       
+      </ul>
+
+     
+
+
+    </div>
+  </nav>
