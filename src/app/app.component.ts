@@ -9,10 +9,9 @@ import { Component } from '@angular/core';
 
 
 export class AppComponent {
-  title = 'Semana03';
+  title = 'Departamentos';
 
   constructor(http: HttpClient ){
 
   }
-
 }
