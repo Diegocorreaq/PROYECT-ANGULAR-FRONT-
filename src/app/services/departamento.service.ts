@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Departamento } from '../models/departamento.model';
 
 
-const baseURL = "http://localhost:8090/rest/util/departamento";
+const baseURL = "http://localhost:8090/rest/departamento";
 
 @Injectable({
   providedIn: 'root'
