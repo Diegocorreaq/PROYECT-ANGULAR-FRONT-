@@ -8,6 +8,7 @@ import { AddMascotaComponent } from './components/add-mascota/add-mascota.compon
 import { AddVisitanteComponent } from './components/add-visitante/add-visitante.component';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './auth/login.component';
+import { AddUsuarioComponent } from './components/add-usuario/add-usuario.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:"addHabitante", component: AddHabitanteComponent},
   {path:"addMascota", component: AddMascotaComponent},  
   {path:"addVisitante", component: AddVisitanteComponent},
+  {path:"addUsuario", component: AddUsuarioComponent},
 
   { path: '', component: IndexComponent },
   { path: 'login', component: LoginComponent },

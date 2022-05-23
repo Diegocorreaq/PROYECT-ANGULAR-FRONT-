@@ -1,0 +1,71 @@
+
+<app-menu></app-menu>
+<div class="text-center" *ngIf="isLogged; else loggedOut">
+    <h2>Ya has iniciado sesión</h2>
+</div>
+
+<ng-template #loggedOut>
+    <div class="container d-flex justify-content-center">
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="login">Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" routerLink="addUsuario">Crear Cuenta</a>
+                    </li>
+                    
+                  </ul>
+            </div>
+            <div class="card-body">
+              <form #f="ngForm" (ngSubmit)="insertado()" novalidate>
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" name="nombre" id="nombres" class="form-control"
+                  [(ngModel)]="nuevoUsuario.nombres" required>
+              </div>
+                <div class="form-group">
+                    <label for="nombreUsuario">Apellidos</label>
+                    <input type="text" name="nombreUsuario" id="Apellidos" class="form-control"
+                    [(ngModel)]="nuevoUsuario.apellidos" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombreUsuario">DNI</label>
+                    <input type="text" name="nombreUsuario" id="DNI" class="form-control"
+                    [(ngModel)]="nuevoUsuario.dni" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombreUsuario">Login</label>
+                    <input type="text" name="nombreUsuario" id="Login" class="form-control"
+                    [(ngModel)]="nuevoUsuario.login" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password" class="form-control"
+                    [(ngModel)]="nuevoUsuario.password" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Direccion</label>
+                  <input type="text" name="email" id="Direccion" class="form-control"
+                  [(ngModel)]="nuevoUsuario.direccion" required>
+              </div>
+              <div class="form-group">
+                <label for="nombreUsuario">Fecha de Nacimiento</label>
+                <input type="text" name="nombreUsuario" id="fechnac" class="form-control"
+                [(ngModel)]="nuevoUsuario.fechaNacimiento" required>
+            </div>
+            <div class="form-group">
+                <label for="nombreUsuario">Ubigeo</label>
+                <input type="text" name="nombreUsuario" id="ubigeo" class="form-control"
+                [(ngModel)]="nuevoUsuario.ubigeo" required>
+            </div>
+                <div class="form-group">
+                    <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                        <i class="fas fa-sign-in-alt"></i> Crear Cuenta</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</ng-template>

@@ -1,10 +1,46 @@
-<app-menu></app-menu>
+
 <div class="text-center" *ngIf="isLogged; else loggedOut">
     <h2>Ya has iniciado sesión</h2>
 </div>
 
 <ng-template #loggedOut>
     <div class="container d-flex justify-content-center">
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" routerLink="login">Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="addUsuario">Crear Cuenta</a>
+                    </li>
+                    
+                  </ul>
+            </div>
+            <div class="card-body">
+                <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+                    <div class="form-group">
+                        <label for="nombreUsuario">Nombre de Usuario</label>
+                        <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control"
+                        [(ngModel)]="loginUsuario.login" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="password" class="form-control"
+                        [(ngModel)]="loginUsuario.password" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                      </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+    <!--<div class="container d-flex justify-content-center">
         <div class="card">
             <div class="card-body">
                 <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
@@ -24,5 +60,62 @@
                 </form>
             </div>
         </div>
+    </div>-->
+
+   <!-- 
+<div class="container" style=" margin: 2% auto">
+	
+    <div class= "izquierda" style="float: left; margin: 0 0 0 100px; width: 40%; height: 30%">
+            <img src="inicio.jpg" id= "logo" 	style="width: 100%; height: 100%;">
+              <br>
+              <div style="float: left; margin: 10px 0 0 20px">
+                      <h6 style="color: #A19B9A">Bienvenido usuario(a),</h6>
+                      <h6 style="color: #A19B9A">esta es una aplicacion web donde puedes</h6>
+                      <h6 style="color: #A19B9A">gestionar tu edificio.</h6>
+              </div>
     </div>
-</ng-template>
+    <form class="user" data-toggle="validator" role="form" action=""  method="post" id="iniciarSesion"  >
+        <div class="derecha" style="float: right; margin: 100px 80px 0 0">
+            <div class="CrearCuenta" style=" margin: 0 0 0 300px">
+            
+                    <a routerLink="addUsuario"><h6>Crear cuenta</h6></a>
+            </div>
+            <div class="campos" >
+                <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+                    <div class="form-group">
+                        <label for="nombreUsuario">Nombre de Usuario</label>
+                        <input type="text" name="login" id="login" class="form-control"  [(ngModel)]="loginUsuario.login" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="password" class="form-control"  [(ngModel)]="loginUsuario.password" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                              <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                        </button>
+                    </div>
+                </form>
+                    
+                    
+                    
+                    
+                    
+                   
+                    <br>
+                    <div style="float: left; margin: 10px 0 0 20px" >
+                    <h6 style="color: #A19B9A">Ingresa tu usuario y contraseña</h6>
+                    <h6 style="color: #A19B9A">Luego da click en "Iniciar sesion" o presione "Enter"</h6>
+                    <br>
+                    <h6 style=" color: #7B7A7A">¡Tu contraseña es importante!</h6>
+                    <h6 style=" color: #7B7A7A">Recuerda que siempre debes tener:</h6>
+                    <h6 style=" color: #7B7A7A">-Minimo 8 caracteres, maximo 20.</h6>
+                    <h6 style=" color: #7B7A7A">-Una mayuscula y una minuscula.</h6>
+                    <h6 style=" color: #7B7A7A">-Un numero.</h6>
+                    <h6 style=" color: #7B7A7A">-No debe contener informacion tuya.</h6>
+                    </div>
+                    
+            </div>
+    </div>
+    </form>
+</div>-->
