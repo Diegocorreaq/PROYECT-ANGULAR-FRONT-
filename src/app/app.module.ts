@@ -9,7 +9,6 @@ import { AddModalidadComponent } from './components/add-modalidad/add-modalidad.
 import { AddDepartamentoComponent } from './components/add-departamento/add-departamento.component';
 import { AddHabitanteComponent } from './components/add-habitante/add-habitante.component';
 import { AddMascotaComponent } from './components/add-mascota/add-mascota.component';
-import { AddTipohabitanteComponent } from './components/add-tipohabitante/add-tipohabitante.component';
 import { AddVisitanteComponent } from './components/add-visitante/add-visitante.component';
 import { LoginComponent } from './auth/login.component';
 import { MenuComponent } from './menu/menu.component';
@@ -27,7 +26,6 @@ import { AddUsuarioComponent } from './components/add-usuario/add-usuario.compon
     AddDepartamentoComponent,
     AddHabitanteComponent,
     AddMascotaComponent,
-    AddTipohabitanteComponent,
     AddVisitanteComponent,
     AddUsuarioComponent
   ],

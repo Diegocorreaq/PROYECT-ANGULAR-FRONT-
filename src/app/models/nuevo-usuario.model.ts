@@ -1,3 +1,5 @@
+
+
 export class NuevoUsuario {
     nombres?: string;
     apellidos?: string;
@@ -8,6 +10,5 @@ export class NuevoUsuario {
     direccion?: string;
     fechaNacimiento?: Date;
     estado?: number;
-    ubigeo?: number;
   
 }

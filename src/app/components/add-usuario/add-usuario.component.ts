@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { NuevoUsuario } from 'src/app/models/nuevo-usuario.model';
-import { AuthService } from 'src/app/security/auth.service';
 import { TokenService } from 'src/app/security/token.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -16,9 +14,11 @@ export class AddUsuarioComponent implements OnInit {
   
   isLogged = false;
   
-  constructor(private usuarioService:UsuarioService,private tokenService: TokenService,
-    private authService: AuthService,
-    private router: Router) { }
+    
+  
+  constructor(private usuarioService:UsuarioService,private tokenService: TokenService) { }
+ 
+  
   insertado(){
     this.usuarioService.instertarUsuario(this.nuevoUsuario).subscribe(
       (x) => alert(x.mensaje)

@@ -13,7 +13,7 @@
         <div class="row" style="margin-top: 3%">
                 <div class="col-lg-6">
                     <label for="nombre">Codigo Mascota</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="mascota.codMascota"  disabled=""/>
+                    <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="mascota.codMascota"  />
                 </div>
             
                
@@ -34,7 +34,12 @@
             <label for="numMujeres">Sexo</label>
             <input type="text" class="form-control" name="numMujeres" id="numMujeres"  [(ngModel)]="mascota.sexo"  />
     </div>
+    <div class="col-lg-3">
+        <label for="telefono">Fecha de nacimiento</label>
+        <input type="date"  class="form-control" id="Fecha"  name="Fecha"  [(ngModel)]="mascota.fechaNacimiento" />
+    </div>
          </div>
+         
   
         <div class="row" style="margin-top: 3%">
         

@@ -10,10 +10,10 @@
             <div class="card-header">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                      <a class="nav-link" routerLink="login">Iniciar Sesión</a>
+                      <a class="nav-link" routerLink="/login">Iniciar Sesión</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" routerLink="addUsuario">Crear Cuenta</a>
+                      <a class="nav-link active" routerLink="/addUsuario">Crear Cuenta</a>
                     </li>
                     
                   </ul>
@@ -50,18 +50,14 @@
                   <input type="text" name="email" id="Direccion" class="form-control"
                   [(ngModel)]="nuevoUsuario.direccion" required>
               </div>
-              <div class="form-group">
-                <label for="nombreUsuario">Fecha de Nacimiento</label>
-                <input type="text" name="nombreUsuario" id="fechnac" class="form-control"
-                [(ngModel)]="nuevoUsuario.fechaNacimiento" required>
-            </div>
+              
             <div class="form-group">
-                <label for="nombreUsuario">Ubigeo</label>
-                <input type="text" name="nombreUsuario" id="ubigeo" class="form-control"
-                [(ngModel)]="nuevoUsuario.ubigeo" required>
+                <label for="telefono">Fecha de nacimiento</label>
+                <input type="date"  class="form-control" id="Fecha"  name="Fecha" [(ngModel)]="nuevoUsuario.fechaNacimiento" />
             </div>
+            
                 <div class="form-group">
-                    <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                    <button class="btn btn-outline-success btn-block" >
                         <i class="fas fa-sign-in-alt"></i> Crear Cuenta</button>
                 </div>
             </form>
