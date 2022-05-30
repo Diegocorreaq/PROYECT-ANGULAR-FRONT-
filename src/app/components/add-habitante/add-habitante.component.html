@@ -37,6 +37,10 @@
                 <label for="telefono">Telefono</label>
                 <input type="text"  class="form-control" id="telefono"  name="telefono"  [(ngModel)]="habitante.telefono" />
             </div>
+            <div class="col-lg-3">
+                <label for="telefono">Fecha de nacimiento</label>
+                <input type="date"  class="form-control" id="Fecha"  name="Fecha"  [(ngModel)]="habitante.fechaNacimiento" />
+            </div>
 
 
             <div class="col-lg-3">
@@ -44,6 +48,15 @@
                 <select  id="departamento" name="departamento" class="form-control" [(ngModel)]="habitante.departamento!.codDepartamento">
                     <option value="-1"> [Seleccione] </option>   
                     <option *ngFor="let aux of departamento" value="{{aux.codDepartamento}}">
+                        {{aux.descripcion}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <label for="tipohabitante">Tipo Habitante</label>
+                <select  id="tipohabitante" name="tipohabitante" class="form-control" [(ngModel)]="habitante.tipohabitante!.idTipoHabitante">
+                    <option value="-1"> [Seleccione] </option>   
+                    <option *ngFor="let aux of tipohabitante" value="{{aux.idTipoHabitante}}">
                         {{aux.descripcion}}
                     </option>
                 </select>

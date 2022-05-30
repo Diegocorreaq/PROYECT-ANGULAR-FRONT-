@@ -18,4 +18,5 @@ export class HabitanteService {
   listaHabitante():Observable<Habitante[]>{
     return this.http.get<Habitante[]>(baseURL);
   }
+  
 }
