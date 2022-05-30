@@ -9,6 +9,7 @@ import { AddVisitanteComponent } from './components/add-visitante/add-visitante.
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './auth/login.component';
 import { AddUsuarioComponent } from './components/add-usuario/add-usuario.component';
+import { ConsultaVisitanteComponent } from './components/consulta-visitante/consulta-visitante.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:"addHabitante", component: AddHabitanteComponent},
   {path:"addMascota", component: AddMascotaComponent},  
   {path:"addVisitante", component: AddVisitanteComponent},
+  {path:"addVisita", component: ConsultaVisitanteComponent},
   {path:"addUsuario", component: AddUsuarioComponent},
 
   { path: '', component: IndexComponent },
