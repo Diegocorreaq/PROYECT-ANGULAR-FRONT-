@@ -6,7 +6,7 @@ export class Visita {
 
     idVisita?:number;
     departamento?:Departamento;
-    idVisitante?:Visitante;
+    Visitante?:Visitante;
     fechaEntrada?:Date;
     fechaSalida?:Date;
     usuario?:LoginUsuario;

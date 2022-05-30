@@ -1,4 +1,5 @@
-<app-menu></app-menu>   
+<app-menu></app-menu>  
+
 <div class="container">
 
     <form class="content" (ngSubmit)="insertado()" >
@@ -11,37 +12,51 @@
         </div>
   
         <div class="row" style="margin-top: 3%">
-                <div class="col-lg-6">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="visitante.nombre"  />
+            <label for="nombre">DNI </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="col-lg-4">
+                    
+                    <input size="10" type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="visita.Visitante!.dni"  />
                 </div>
             
-                <div class="col-lg-3">
-                    <label for="apellido">Apellido</label>
-                    <input type="text" class="form-control" name="apellido" id="apellido"  [(ngModel)]="visitante.apellido" />
+                <div class="col-lg-1">
+                    <button class="btn btn-info" >Buscar</button>
+                   
                 </div>
-
-                <div class="col-lg-3">
-                        <label for="telefono">Telefono</label>
-                        <input type="text" class="form-control" name="telefono" id="telefono"  [(ngModel)]="visitante.telefono"  />
+                <div class="col-lg-6">
+                    <button class="btn btn-secondary" >...</button>
+                   
+                </div>
+<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="telefono">Visitante</label>   
+                <div class="col-lg-4">
+                       
+                        <input type="text" class="form-control" name="telefono" id="telefono" disabled/>
+                </div>
+                <label for="telefono">Visita a </label>   
+                <div class="col-lg-4">
+                       
+                    <select  id="departamento" name="departamento" class="form-control" [(ngModel)]="visita.departamento!.codDepartamento">
+                        <option value="-1"> [Seleccione] </option>   
+                        <option *ngFor="let aux of departamento" value="{{aux.codDepartamento}}">
+                            {{aux.descripcion}}
+                        </option>
+                    </select>
                 </div>
          </div>
   
         <div class="row" style="margin-top: 3%">
         <div class="col-lg-3">
-            <label for="parentesco">Correo</label>
-            <input type="text"  class="form-control" id="parentesco"  name="parentesco"  [(ngModel)]="visitante.parentesco" />
+            <label for="parentesco">Hora de Ingreso</label>
+           
+            <input type="hidden"  class="form-control" id="FechaInfreso"  value="{{today | date:'dd-MM-yyyy hh:mm:ss a'}}"  [(ngModel)]="visita.fechaEntrada" disabled/>
+            <input type="text"  class="form-control" id="dateIngreso"  name="parentesco" value=" {{ this.time$ | async }}"   disabled/>
         </div>
     
 
             <div class="col-lg-3">
-                <label for="departamento">Departamento</label>
-                <select  id="departamento" name="departamento" class="form-control" [(ngModel)]="visitante.departamento!.codDepartamento">
-                    <option value="-1"> [Seleccione] </option>   
-                    <option *ngFor="let aux of departamento" value="{{aux.codDepartamento}}">
-                        {{aux.descripcion}}
-                    </option>
-                </select>
+                <label for="departamento">Hora de Salida</label>
+                <input type="text"  class="form-control" id="parentesco"  name="parentesco"  [(ngModel)]="visita.fechaSalida" />
             </div>
         </div>
   
@@ -58,3 +73,5 @@
   
   
     </div>
+
+       
