@@ -14,6 +14,7 @@ import { LoginComponent } from './auth/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { IndexComponent } from './index/index.component';
 import { AddUsuarioComponent } from './components/add-usuario/add-usuario.component';
+import { ConsultaVisitanteComponent } from './components/consulta-visitante/consulta-visitante.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AddUsuarioComponent } from './components/add-usuario/add-usuario.compon
     AddHabitanteComponent,
     AddMascotaComponent,
     AddVisitanteComponent,
-    AddUsuarioComponent
+    AddUsuarioComponent,
+    ConsultaVisitanteComponent
   ],
   imports: [
     BrowserModule,

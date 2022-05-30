@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Visitante } from '../models/visitante.model';
@@ -17,5 +17,10 @@ export class VisitanteService {
   }
   listaVisitante():Observable<Visitante[]>{
     return this.http.get<Visitante[]>(baseURL);
+  }
+
+  consultaVisitante(dni:string, nombre:string, apellido:string, estado:number):Observable<any>{
+    const params = new HttpParams().set("dni",dni).set("nombre",nombre).set("apellido",apellido).set("estado",estado);
+    return this.http.get<any>(baseURL+"/listaVisitanteConParametros",{params});
   }
 }
