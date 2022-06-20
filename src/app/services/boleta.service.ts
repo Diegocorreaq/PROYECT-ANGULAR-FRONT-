@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Boleta } from '../models/boleta.model';
@@ -16,6 +16,19 @@ export class BoletaService {
   }
   listaBoleta():Observable<Boleta[]>{
     return this.http.get<Boleta[]>(baseURL);
+  }
+  consultaBoletaParametros(servicio:number, departamento:number, anio:number):Observable<any>{
+    const params = new HttpParams().set("servicio",servicio).set("departamento",departamento).set("anio",anio);
+    return this.http.get<any>(baseURL+"/listaBoletaConParametros",{params});
+  }
+
+  consultaBoletaParametrosEstado(servicio:number, departamento:number, anio:number, estado:number):Observable<any>{
+    const params = new HttpParams().set("servicio",servicio).set("departamento",departamento).set("anio",anio).set("estado",estado);
+    return this.http.get<any>(baseURL+"/listaBoletaConParametrosEstado",{params});
+  }
+
+  actualizaBoleta(data: Boleta): Observable<any> {
+    return this.http.put(baseURL+'/actualizaBoleta', data);
   }
 
 }
