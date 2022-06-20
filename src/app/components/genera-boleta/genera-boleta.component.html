@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 <div class="container">
 
-    <form class="content" >
+    <form class="content" (ngSubmit)="insertado()">
 
 
     <div class="submit-form" >
@@ -15,7 +15,7 @@
         <div class="row" style="margin-top: 2%">
             <div class="col-lg-3">
                 <label for="departamento">Servicio</label>
-                <select  id="departamento" name="departamento" class="form-control">
+                <select  id="departamento" name="departamento" class="form-control"  [(ngModel)]="boleta.servicio!.idServicio">
                     <option value="-1"> [Seleccione] </option>   
                     <option *ngFor="let aux of servicio" value="{{aux.idServicio}}">
                         {{aux.descripcion}}
@@ -25,7 +25,7 @@
                 
             <div class="col-lg-3">
                 <label for="departamento">Departamento</label>
-                <select  id="departamento" name="departamento" class="form-control">
+                <select  id="departamento" name="departamento" class="form-control"  [(ngModel)]="boleta.departamento!.codDepartamento">
                     <option value="-1"> [Seleccione] </option>   
                     <option *ngFor="let aux of departamento" value="{{aux.codDepartamento}}">
                         {{aux.descripcion}}
@@ -34,23 +34,14 @@
             </div>
             <div class="col-lg-3">
                 <label for="departamento">Año</label>
-                <select  id="departamento" name="departamento" class="form-control">
+                <select  id="departamento" name="departamento" class="form-control"  [(ngModel)]="boleta.anio">
                     <option value="-1"> [Seleccione] </option>   
-                    <option value="0">
+                    <option value="2021">
                        2021
-                    </option>
-                    <option value="1">
-                        2021
-                     </option>
-                     <option value="2">
-                        2021
-                     </option>
-                     <option value="3">
-                        2021
-                     </option>
-                     <option value="4">
-                        2021
-                     </option>
+                    </option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option>
+                     <option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option>
+                     <option value="2029">2029</option><option value="2030">2030</option>
+
                      
                 </select>
             </div>
@@ -62,6 +53,9 @@
 
 
         </div>
+    </div>
+  
+</form>
 
          <div class="row" style="margin-top: 3%">
                 <table class="table table-hover">
@@ -75,12 +69,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                         <tr  >
-                                 <td></td>   
-                                 <td></td> 
-                                 <td></td>
-                                 <td></td>   
-                                 <td></td>
+                         <tr   *ngFor = "let aux of listaboleta">
+                                 <td>{{ aux.codBoleta }}</td>   
+                                 <td>{{ aux.departamento!.descripcion }}</td> 
+                                 <td>{{ aux.mes }}</td>
+                                 <td>{{ aux.fechaPago }}</td>   
+                                 <td>{{ aux.servicio!.descripcion }}</td>
                                  
                             </tr>
 
@@ -94,9 +88,7 @@
         
 
     
-    </div>
-  
-     </form>
+   
   
   
     </div>
