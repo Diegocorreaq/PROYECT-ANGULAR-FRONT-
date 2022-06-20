@@ -1,0 +1,103 @@
+<app-menu></app-menu>
+<div class="container">
+
+    <form class="content" >
+
+
+    <div class="submit-form" >
+  
+         <div class="row">
+            <div class="col-lg-12">
+                <h6>Generar Boleta</h6>
+            </div>
+        </div>
+  
+        <div class="row" style="margin-top: 2%">
+            <div class="col-lg-3">
+                <label for="departamento">Servicio</label>
+                <select  id="departamento" name="departamento" class="form-control">
+                    <option value="-1"> [Seleccione] </option>   
+                    <option *ngFor="let aux of servicio" value="{{aux.idServicio}}">
+                        {{aux.descripcion}}
+                    </option>
+                </select>
+            </div>
+                
+            <div class="col-lg-3">
+                <label for="departamento">Departamento</label>
+                <select  id="departamento" name="departamento" class="form-control">
+                    <option value="-1"> [Seleccione] </option>   
+                    <option *ngFor="let aux of departamento" value="{{aux.codDepartamento}}">
+                        {{aux.descripcion}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <label for="departamento">Año</label>
+                <select  id="departamento" name="departamento" class="form-control">
+                    <option value="-1"> [Seleccione] </option>   
+                    <option value="0">
+                       2021
+                    </option>
+                    <option value="1">
+                        2021
+                     </option>
+                     <option value="2">
+                        2021
+                     </option>
+                     <option value="3">
+                        2021
+                     </option>
+                     <option value="4">
+                        2021
+                     </option>
+                     
+                </select>
+            </div>
+            <div class="row" style="margin-top: 3%"> 
+                <div class="col-lg-12">
+                    <button class="btn btn-success"  >Generar</button>
+                </div>
+        </div>
+
+
+        </div>
+
+         <div class="row" style="margin-top: 3%">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Boleta</th>
+                            <th>Propietario</th>
+                            <th>Mes</th>
+                            <th>FechaPago</th>
+                            <th>Servicio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr  >
+                                 <td></td>   
+                                 <td></td> 
+                                 <td></td>
+                                 <td></td>   
+                                 <td></td>
+                                 
+                            </tr>
+
+                    </tbody>
+                       
+
+                </table>
+
+
+         </div>
+        
+
+    
+    </div>
+  
+     </form>
+  
+  
+    </div>
+
