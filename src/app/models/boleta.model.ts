@@ -4,8 +4,8 @@ import { Servicio } from "./servicio.model";
 
 export class Boleta {
     codBoleta?:number;
-    Departamento?:Departamento;
-    Servicio?:Servicio;
+    departamento?:Departamento;
+    servicio?:Servicio;
     anio?:Number;
     mes?:Number;
     estado?:Number;
