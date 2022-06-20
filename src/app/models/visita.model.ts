@@ -9,6 +9,7 @@ export class Visita {
     Visitante?:Visitante;
     fechaEntrada?:Date;
     fechaSalida?:Date;
+    comentario?:String;
     usuario?:LoginUsuario;
     fechaRegistro?:Date;
 
