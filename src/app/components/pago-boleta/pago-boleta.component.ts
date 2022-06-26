@@ -20,7 +20,7 @@ export class PagoBoletaComponent implements OnInit {
    estado:number=1;
 
   listaServicios: Servicio[] = [];
-  listaboleta: Boleta[] = [];
+  listaBoleta: Boleta[] = [];
   boleta: Boleta = {
     departamento: {
       codDepartamento: -1,
@@ -48,10 +48,9 @@ export class PagoBoletaComponent implements OnInit {
   }
 
   consultaBoletaParametrosEstado(){
-    this.boletaService.consultaBoletaParametrosEstado(this.servicio, this.departamento, this.anio, this.estado?1:0).subscribe(
+    this.boletaService.consultaBoletaParametrosEstado( this.departamento, this.servicio, this.anio, this.estado?1:0).subscribe(
       (x) => {
-        this.listaboleta = x.lista;
-        //alert(x.mensaje);
+        this.listaBoleta = x.lista;
       }
     );
   }

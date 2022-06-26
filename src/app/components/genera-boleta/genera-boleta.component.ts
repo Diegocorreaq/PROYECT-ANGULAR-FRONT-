@@ -32,16 +32,20 @@ export class GeneraBoletaComponent implements OnInit {
   );
   this.servicioService.listaServicio().subscribe(
     (x) => this.servicio = x
-);
+  );
+  this.servicioBoleta.listaBoleta().subscribe(
+    (x) => this.listaboleta = x
+  );
 
 
    }
    insertado(){
-    this.servicioBoleta.listaBoleta().subscribe(
-      (x) => this.listaboleta = x
-    );
+    
     this.servicioBoleta.insertaBoleta(this.boleta).subscribe(
       (x) => alert(x.mensaje)
+    );
+    this.servicioBoleta.listaBoleta().subscribe(
+      (x) => this.listaboleta = x
     );
    
   }

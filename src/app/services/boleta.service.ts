@@ -22,8 +22,8 @@ export class BoletaService {
     return this.http.get<any>(baseURL+"/listaBoletaConParametros",{params});
   }
 
-  consultaBoletaParametrosEstado(servicio:number, departamento:number, anio:number, estado:number):Observable<any>{
-    const params = new HttpParams().set("servicio",servicio).set("departamento",departamento).set("anio",anio).set("estado",estado);
+  consultaBoletaParametrosEstado(departamento:number, servicio:number, anio:number, estado:number):Observable<any>{
+    const params = new HttpParams().set("departamento",departamento).set("servicio",servicio).set("anio",anio).set("estado",estado);
     return this.http.get<any>(baseURL+"/listaBoletaConParametrosEstado",{params});
   }
 
