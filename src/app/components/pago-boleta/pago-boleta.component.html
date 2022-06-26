@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 <div class="container">
 
-    <form class="content" >
+    <form class="content" (ngSubmit)="consultaBoletaParametrosEstado()">
 
 
     <div class="submit-form" >
@@ -15,32 +15,40 @@
         <div class="row" style="margin-top: 2%">
             
             <div class="col-lg-4">
-                <label for="dni" class="col-lg-1">DNI</label>
-                <input type="text" class="form-control" name="dni" id="dni"   />
-            </div>
-            
-            <div class="col-lg-4">
-                <label for="dni" class="col-lg-1">DNI</label>
-                <input type="text" class="form-control" name="dni" id="dni"  />
+                <label for="departamento">Departamento</label>
+                <select  id="departamento" name="departamento" class="form-control" [(ngModel)]= "departamento">
+                    <option value="-1"> [Seleccione] </option>   
+                    <option *ngFor="let aux of listaDepartamentos" value="{{aux.codDepartamento}}">
+                        {{aux.descripcion}}
+                    </option>
+                </select>
             </div>
         
             <div class="col-lg-4">
                 <label for="departamento">Servicio</label>
-                <select  id="departamento" name="departamento" class="form-control">
+                <select  id="departamento" name="departamento" class="form-control" [(ngModel)]= "servicio">
                     <option value="-1"> [Seleccione] </option>   
-                    <option *ngFor="let aux of servicio" value="{{aux.idServicio}}">
+                    <option *ngFor="let aux of listaServicios" value="{{aux.idServicio}}">
                         {{aux.descripcion}}
                     </option>
                 </select>
             </div>
             <div class="col-lg-4">
                 <label for="departamento">Año</label>
-                <select  id="departamento" name="departamento" class="form-control">
+                <select  id="departamento" name="departamento" class="form-control" [(ngModel)]= "anio">
                     <option value="-1"> [Seleccione] </option>   
-                    <option >
-                       
-                    </option>
+                    <option value="2021">
+                       2021
+                    </option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option>
+                     <option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option>
+                     <option value="2029">2029</option><option value="2030">2030</option>
                 </select>
+            </div>
+            <div class="col-lg-2">
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="estado" [(ngModel)]= "estado" checked  name="estado"/>
+                    <label class="custom-control-label" for="estado">Estado</label>
+                </div>
             </div>
             <div class="row" style="margin-top: 3%"> 
                 <div class="col-lg-12">
@@ -56,21 +64,37 @@
                     <thead>
                         <tr>
                             <th>Boleta</th>
-                            <th>Propietario</th>
+                            <th>Departamento</th>
                             <th>Mes</th>
                             <th>FechaPago</th>
                             <th>Servicio</th>
+                            <th>Estado</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                         <tr>
-                                 <td></td>   
-                                 <td></td> 
-                                 <td></td>
-                                 <td></td>   
-                                 <td></td>
-                                 <td><button class="btn btn-danger">Pagar</button></td>
+                        <tr   *ngFor = "let aux of listaBoleta">
+                            <td>{{ aux.codBoleta }}</td>   
+                            <td>{{ aux.departamento!.descripcion }}</td> 
+                            <td>{{ aux.mes }}</td>
+                            <td>{{ aux.fechaPago }}</td>   
+                            <td>{{ aux.servicio!.descripcion }}</td>
+                            
+                            <td>{{ aux.estado == 1 ? "Por Pagar" : "Pagado" }}</td>
+                                 <td><div class="custom-control custom-switch">
+                                    <input
+                                      type="checkbox"
+                                      class="custom-control-input"
+                                      id="id_{{ aux.codBoleta }}"
+                                      [checked]="aux.estado == 1 ? true : false"
+                                      name="estado"
+                                      (change)="cambioEstado(aux)"
+                                    />
+                                    <label
+                                      class="custom-control-label"
+                                      for="id_{{ aux.codBoleta }}"
+                                    ></label>
+                                  </div></td>
                                  
                             </tr>
 
