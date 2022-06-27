@@ -17,6 +17,8 @@ import { ConsultaVisitanteComponent } from './components/consulta-visitante/cons
 import { AppRoutingModule } from './app-routing.module';
 import { GeneraBoletaComponent } from './components/genera-boleta/genera-boleta.component';
 import { PagoBoletaComponent } from './components/pago-boleta/pago-boleta.component';
+import { RegistraIncidenteComponent } from './components/registra-incidente/registra-incidente.component';
+import { ConsultaIncidenteComponent } from './components/consulta-incidente/consulta-incidente.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { PagoBoletaComponent } from './components/pago-boleta/pago-boleta.compon
     AddUsuarioComponent,
     ConsultaVisitanteComponent,
     GeneraBoletaComponent,
-    PagoBoletaComponent
+    PagoBoletaComponent,
+    RegistraIncidenteComponent,
+    ConsultaIncidenteComponent
   ],
   imports: [
     BrowserModule,

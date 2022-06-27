@@ -11,6 +11,8 @@ import { AddUsuarioComponent } from './components/add-usuario/add-usuario.compon
 import { ConsultaVisitanteComponent } from './components/consulta-visitante/consulta-visitante.component';
 import { GeneraBoletaComponent } from './components/genera-boleta/genera-boleta.component';
 import { PagoBoletaComponent } from './components/pago-boleta/pago-boleta.component';
+import { RegistraIncidenteComponent } from './components/registra-incidente/registra-incidente.component';
+import { ConsultaIncidenteComponent } from './components/consulta-incidente/consulta-incidente.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path:"addUsuario", component: AddUsuarioComponent},
   {path:"addGeneraBoleta", component: GeneraBoletaComponent},
   {path:"addPagoBoleta", component: PagoBoletaComponent},
+  {path:"addConsultaIncidente", component: ConsultaIncidenteComponent},
+  {path:"addRegistraIncidente", component: RegistraIncidenteComponent},
   { path: '', component: IndexComponent },
   { path: 'login', component: LoginComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
