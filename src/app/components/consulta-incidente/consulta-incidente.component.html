@@ -1,1 +1,185 @@
-<p>consulta-incidente works!</p>
+<app-menu></app-menu>
+<div class="container">
+
+    <div class="content">
+
+
+        <div >
+  
+            <div class="row">
+                <div class="col-lg-12">
+                    <h6>Gestión de Incidentes</h6>
+                </div>
+            </div>
+  
+            <div class="row" style="margin-top: 2%">
+                
+                <div class="col-lg-4">
+                    <label for="departamento">Departamento</label>
+                    <select  id="departamento" name="departamento" class="form-control" [(ngModel)]= "departamento">
+                        <option value="-1"> [Seleccione] </option>   
+                        <option *ngFor="let aux of listaDepartamentos" value="{{aux.codDepartamento}}">
+                            {{aux.descripcion}}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-lg-4">
+                    <label for="departamento">Causa de Incidente</label>
+                    <select  id="departamento" name="departamento" class="form-control" [(ngModel)]= "causaIncidente">
+                        <option value="-1"> [Seleccione] </option>   
+                        <option *ngFor="let aux of listaCausaIncidente" value="{{aux.idCausaIncidente}}">
+                            {{aux.descripcion}}
+                        </option>
+                    </select>
+                </div>
+                
+                <div class="col-lg-2">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="estado" [(ngModel)]= "estado" checked  name="estado"/>
+                        <label class="custom-control-label" for="estado">Estado</label>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 3%"> 
+                    <div class="col-lg-12">
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="id_btn_filtrar"
+                            style="width: 150px"
+                            (click)="consultaIncidenteParametrosEstado()"
+                            >
+                            Filtrar
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+
+         <div class="row" style="margin-top: 3%">
+                <table class="table table-hover table-striped table-bordered mt-5">
+                    <thead>
+                        <tr>
+                            <th>Incidente</th>
+                            <th>Departamento</th>
+                            <th>Causa de Incidente</th>
+                            <th>Estado</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr   *ngFor = "let aux of listaIncidente">
+                            <td>{{ aux.codIncidente }}</td>   
+                            <td>{{ aux.departamento!.descripcion }}</td> 
+                            <td>{{ aux.causaIncidente!.descripcion }}</td>
+                            
+                            <td>{{ aux.estado == 1 ? "Tratado" : "Por Tratar" }}</td>
+                            <td><div class="custom-control custom-switch">
+                                    <input
+                                      type="checkbox"
+                                      class="custom-control-input"
+                                      id="id_{{ aux.codIncidente }}"
+                                      [checked]="aux.estado == 1 ? true : false"
+                                      name="estado"
+                                      (change)="cambioEstado(aux)"
+                                    />
+                                    <label
+                                      class="custom-control-label"
+                                      for="id_{{ aux.codIncidente }}"
+                                    ></label>
+                                  </div>
+                            </td>
+                            <td>
+                                <button
+                                type="button"
+                                style="width: 90px"
+                                class="btn btn-primary btn-sm"
+                                data-toggle="modal"
+                                data-target="#idModalActualizar"
+                                (click)="busca(aux)"
+                              >
+                                Editar
+                              </button>
+                            </td>
+                                 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>  
+        </div>
+  
+    </div>
+
+
+    <div
+      class="modal fade"
+      id="idModalActualizar"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+        >
+      <div class="modal-dialog" style="max-width: 80%">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Actualizar Reclamo</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <form class="content" (ngSubmit)="actualiza()">
+              <div class="submit-form">
+                <div class="row">
+                  
+                  <div class="col-lg-3">
+                    <label for="id_act_estado">Estado</label>
+                    <select
+                      id="estado"
+                      name="estado"
+                      class="form-control"
+                      [(ngModel)]="incidente.estado"
+                    >
+                      <option value="-1">[Seleccione]</option>
+                      <option value="1">Activo</option>
+                      <option value="0">Inactivo</option>
+                    </select>
+                  </div>
+                  
+                </div>
+              </div>
+  
+                <div class="modal-footer">
+                    <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                    id="btn_act_cerrar"
+                    (click)="consultaIncidenteParametrosEstado()"
+                    >
+                    Close
+                    </button>
+                        <div class="form-group text-center">
+                            <div class="col-lg-12">
+                                <button
+                                    id="id_act_actualiza"
+                                    class="btn btn-success form-control"
+                                    >
+                                    Actualizar
+                                </button>
+                            </div>
+                        </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  
+  
+</div>
+

@@ -13,6 +13,9 @@ import { ServicioService } from 'src/app/services/servicio.service';
 })
 export class GeneraBoletaComponent implements OnInit {
   departamento: Departamento[]=[];
+  
+   
+  
 
   servicio: Servicio[]=[];
   listaboleta: Boleta[]=[];

@@ -19,6 +19,9 @@ import { GeneraBoletaComponent } from './components/genera-boleta/genera-boleta.
 import { PagoBoletaComponent } from './components/pago-boleta/pago-boleta.component';
 import { RegistraIncidenteComponent } from './components/registra-incidente/registra-incidente.component';
 import { ConsultaIncidenteComponent } from './components/consulta-incidente/consulta-incidente.component';
+import { RegistraVisitanteComponent } from './components/registra-visitante/registra-visitante.component';
+import { ActualizaVisitaComponent } from './components/actualiza-visita/actualiza-visita.component';
+import { ActualizaIncidenteComponent } from './components/actualiza-incidente/actualiza-incidente.component';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { ConsultaIncidenteComponent } from './components/consulta-incidente/cons
     GeneraBoletaComponent,
     PagoBoletaComponent,
     RegistraIncidenteComponent,
-    ConsultaIncidenteComponent
+    ConsultaIncidenteComponent,
+    RegistraVisitanteComponent,
+    ActualizaVisitaComponent,
+    ActualizaIncidenteComponent
   ],
   imports: [
     BrowserModule,

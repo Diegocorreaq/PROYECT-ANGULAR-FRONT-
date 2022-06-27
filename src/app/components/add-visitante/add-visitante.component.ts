@@ -5,6 +5,7 @@ import { Visitante } from 'src/app/models/visitante.model';
 import { Observable } from 'rxjs';
 import { DepartamentoService } from 'src/app/services/departamento.service';
 import { VisitanteService } from 'src/app/services/visitante.service';
+import { VisitaService } from 'src/app/services/visita.service';
 
 @Component({
   selector: 'app-add-visitante',
@@ -12,7 +13,7 @@ import { VisitanteService } from 'src/app/services/visitante.service';
   styleUrls: ['./add-visitante.component.css']
 })
 export class AddVisitanteComponent implements OnInit {
-
+  dni:string="";
   today= new Date();
   time$: Observable<any>;
   departamento: Departamento[]=[];
@@ -21,28 +22,38 @@ export class AddVisitanteComponent implements OnInit {
     departamento:{
       codDepartamento:-1
     },
-    Visitante:{
+    visitante:{
+      idVisitante:0,
+        nombre:"",
         dni:"",
+        apellido:""
         
     }  
   };
 
-  constructor(private departamentoService:DepartamentoService, private visitanteService:VisitanteService) {
+  constructor(private departamentoService:DepartamentoService, private visitanteService:VisitanteService, private visitaService:VisitaService) {
     this.departamentoService.listaDepartamento().subscribe(
       (x) => this.departamento = x
   );
-  this.time$ = this.visitanteService.getDate();
+  this.time$ = this.visitaService.getDate();
  }
- insertado(){
-  this.visitanteService.instertarVisitante(this.visita).subscribe(
-    (x) => alert(x.mensaje)
-  );
-}
+
+    insertado(){
+      this.visitaService.instertarVisita(this.visita).subscribe(
+        (x) => alert(x.mensaje)
+      );
+    }
+    consultaVisitanteDni(){
+      this.visitanteService.BuscaVisitantePorDni(this.dni).subscribe(
+        (x) => {
+          this.visita.visitante = x.nombre;
+        }
+      );
+    }
+    
 
  
  ngOnInit(): void {
    
  }
 }
-
-

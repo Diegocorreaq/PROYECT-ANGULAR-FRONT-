@@ -15,7 +15,7 @@ export class VisitanteService {
 
   constructor(private http:HttpClient) { }
   
-  date = new Date();
+  
 
   instertarVisitante(data:Visitante):Observable<any>{
     return this.http.post(baseURL,data);
@@ -28,19 +28,12 @@ export class VisitanteService {
     const params = new HttpParams().set("dni",dni).set("nombre",nombre).set("apellido",apellido).set("estado",estado);
     return this.http.get<any>(baseURL+"/listaVisitanteConParametros",{params});
   }
-  getDate() {
-    return timer(1000, 1000).pipe(map((_) => this.getDateTime()));
+  consultaVisitanteDni(dni:string):Observable<any>{
+    const params = new HttpParams().set("dni",dni);
+    return this.http.get<any>(baseURL+"/listaVisitantePorDni",{params});
   }
-
-  // get new time by adding + sec
-  private getDateTime() {
-    this.date.setSeconds(this.date.getSeconds() + 1);
-    return (
-      this.date.getHours() +
-      ':' +
-      this.date.getMinutes() +
-      ':' +
-      this.date.getSeconds()
-    );
+  BuscaVisitantePorDni(dni:string):Observable<any>{
+    const params = new HttpParams().set("dni",dni);
+    return this.http.get<any>(baseURL+"/BuscaVisitantePorDni",{params});
   }
 }
