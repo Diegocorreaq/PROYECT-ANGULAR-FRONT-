@@ -6,7 +6,7 @@ export class Visita {
 
     idVisita?:number;
     departamento?:Departamento;
-    Visitante?:Visitante;
+    visitante?:Visitante;
     fechaEntrada?:Date;
     fechaSalida?:Date;
     comentario?:String;

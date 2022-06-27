@@ -13,6 +13,9 @@ import { GeneraBoletaComponent } from './components/genera-boleta/genera-boleta.
 import { PagoBoletaComponent } from './components/pago-boleta/pago-boleta.component';
 import { RegistraIncidenteComponent } from './components/registra-incidente/registra-incidente.component';
 import { ConsultaIncidenteComponent } from './components/consulta-incidente/consulta-incidente.component';
+import { ActualizaVisitaComponent } from './components/actualiza-visita/actualiza-visita.component';
+import { RegistraVisitanteComponent } from './components/registra-visitante/registra-visitante.component';
+import { ActualizaIncidenteComponent } from './components/actualiza-incidente/actualiza-incidente.component';
 
 
 const routes: Routes = [
@@ -26,6 +29,9 @@ const routes: Routes = [
   {path:"addPagoBoleta", component: PagoBoletaComponent},
   {path:"addConsultaIncidente", component: ConsultaIncidenteComponent},
   {path:"addRegistraIncidente", component: RegistraIncidenteComponent},
+  {path:"actualizaVisita", component: ActualizaVisitaComponent},
+  {path:"registraVisitante", component: RegistraVisitanteComponent},
+  {path:"actualizaIncidente", component: ActualizaIncidenteComponent},
   { path: '', component: IndexComponent },
   { path: 'login', component: LoginComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },

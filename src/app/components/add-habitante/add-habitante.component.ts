@@ -33,12 +33,11 @@ export class AddHabitanteComponent implements OnInit {
   this.tipoHabitanteService.listaTipohabitante().subscribe(
     (x) => this.tipohabitante = x
 );
-
   
   
  }
 
- insertado(){
+ insertado(): void{
    this.habitanteService.instertarHabitante(this.habitante).subscribe(
      (x) => alert(x.mensaje)
    );
