@@ -61,12 +61,7 @@ export class ConsultaIncidenteComponent implements OnInit {
     aux.estado = aux.estado == 1 ? 0 : 1;
     this.incidenteService.actualizaIncidente(aux).subscribe();
   }
-  actualiza(){
-    this.incidenteService.actualizaIncidente(this.incidente).subscribe((x) => {
-      alert(x.mensaje);
-      document.getElementById('btn_act_cerrar')?.click();
-    });
-  }
+ 
   
 
 }

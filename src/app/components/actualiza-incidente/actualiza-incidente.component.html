@@ -1,1 +1,60 @@
-<p>actualiza-incidente works!</p>
+<app-menu></app-menu>
+<div class="container"
+        >
+      
+            <h5 class="modal-title" id="exampleModalLabel">Actualizar Reclamo</h5>
+           
+         
+            <label >Codigo: {{incidente.codIncidente}}</label><br>
+            <label >Departamento: {{incidente.departamento!.descripcion}}</label><br>
+            <label >Causa:{{incidente.causaIncidente!.descripcion}}</label>
+          <div class="modal-body">
+            <form class="content" (ngSubmit)="actualiza()">
+              <div class="submit-form">
+                <div class="row">
+                  
+                  <div class="col-lg-3">
+                    <label for="id_act_estado">Estado</label>
+                    <select
+                      id="estado"
+                      name="estado"
+                      class="form-control"
+                      [(ngModel)]="incidente.estado"
+                    >
+                      <option value="-1">[Seleccione]</option>
+                      <option value="1">Activo</option>
+                      <option value="0">Inactivo</option>
+                    </select>
+                  </div>
+                  
+                </div>
+              </div>
+  
+                <div class="modal-footer">
+                    <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                    id="btn_act_cerrar"
+                    >
+                    Close
+                    </button>
+                        <div class="form-group text-center">
+                            <div class="col-lg-12">
+                                <button
+                                    id="id_act_actualiza"
+                                    class="btn btn-success form-control"
+                                    >
+                                    Actualizar
+                                </button>
+                            </div>
+                        </div>
+                </div>
+            </form>
+          </div>
+
+       
+    
+  
+
+
